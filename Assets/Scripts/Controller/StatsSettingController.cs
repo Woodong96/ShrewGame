@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatsSettingController : MonoBehaviour
+public class StatsSettingController : StatsSetting
 {
-    // Start is called before the first frame update
+    GameManager gameManager = GameManager.instance;
     void Start()
     {
-        
+        //gameManager.mainPlayer
     }
 
     // Update is called once per frame
