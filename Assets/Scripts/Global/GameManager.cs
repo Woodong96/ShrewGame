@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     /*
     Object 스탯 사용 방법 : GameManager.instance.  을 이용해서 가져오기
-    Object 스탯 수정 방법 : ObjectStatsConroller.cs 에 있는 SetStats() 에 맞는 EntityType 의 Stats을 수정.
+    Object 스탯 수정 방법 : Project - ScriptableObject - Data 에서 원하는 Object 스탯 수정.
     Object 스탯 플레이 중 수정 방법 : Hierachy - GameManger에서 수정
     Object 충돌 설정 중 ..
      */
@@ -33,16 +33,27 @@ public class GameManager : MonoBehaviour
     [Header("Feed")]
     public GameObject feed;
     public DefaultStatsSetting feedStats;
-
+    public int feed_plus_hp;
+    private int feed_count;
 
     [Header("UI")]
     public Image playerHP;
 
 
+    //-----------------------------------------------------------------------------------------------
+    //GameOver 시 나타나는 UI
+    public GameObject gameOverBoard;
+    public Text killEnemy;
+    private int kill_count;
+    public Text playTime;
+    private float play_time;
+    public Text totalScore;
+    private int total_score;
+
 
     //-----------------------------------------------------------------------------------------------
     //GameManager 에서 사용될 Component
-    //private ObjectStatsController statsController;
+    
 
     //-----------------------------------------------------------------------------------------------
     //GameManager 싱글턴 설정 및 Component 받아오기
@@ -52,25 +63,49 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //statsController = GetComponent<ObjectStatsController>();
     }
 
     private void Start()
     {
-        PlayerStats();
-        EnemyStats();
+        StartGame();
     }
 
     private void Update()
     {
         player_hp -= Time.deltaTime;
-        
+        play_time += Time.deltaTime;
         if (player_hp < 0)
         {
-            Time.timeScale = 0;
-
-            //GameOver UI
+            EndGame();
         }
+    }
+
+    //-----------------------------------------------------------------------------------------------
+    //Game 초기화
+    private void StartGame()
+    {
+        PlayerStats();
+        EnemyStats();
+        FeedStats();
+        kill_count = 0;
+        play_time = 0.0f;
+        total_score = 0;
+    }
+
+    //-----------------------------------------------------------------------------------------------
+    //GameOver
+    private void EndGame()
+    {
+        Time.timeScale = 0;
+        gameOverBoard.SetActive(true);
+
+        //점수 계산
+        total_score = kill_count + (int)play_time;
+
+        //UI 보여주기
+        killEnemy.text = kill_count.ToString();
+        playTime.text = play_time.ToString("N2");
+        totalScore.text = total_score.ToString();
     }
 
 
@@ -92,11 +127,21 @@ public class GameManager : MonoBehaviour
         enemy_defense = enemyAttackStats.defense;
     }
 
+    private void FeedStats()
+    {
+        feed_plus_hp = feedStats.full_hp;
+    }
+
     //-----------------------------------------------------------------------------------------------
     //GameObject 충돌 설정
     public void CollisionPlayerToEnemy()
     {
         enemy_hp -= (int)(player_attack - (enemy_defense * 0.1f));
+        if(enemy_hp < 0)
+        {
+            Destroy(enemy);
+            kill_count++;
+        }
     }
 
     public void CollisionEnemyToPlayer() 
@@ -104,9 +149,9 @@ public class GameManager : MonoBehaviour
         player_hp -= enemy_attack - (player_defense * 0.5f);
     }
 
-    public void CollisonPlayerToFeed()
+    public void CollisionPlayerToFeed()
     {
-        player_hp += 5; //Feed에 설정해둔 체력 증가
-        //Destory FeedObject;
+        player_hp += feed_plus_hp;
+        Destroy(feed);
     }
 }
