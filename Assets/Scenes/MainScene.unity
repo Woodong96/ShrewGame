@@ -116611,11 +116611,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656906995}
+  - component: {fileID: 656907000}
   - component: {fileID: 656906998}
   - component: {fileID: 656906997}
   - component: {fileID: 656906996}
   - component: {fileID: 656906999}
-  - component: {fileID: 656907000}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
