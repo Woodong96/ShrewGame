@@ -26,7 +26,7 @@ public class ShrewShooting : MonoBehaviour
         _aimDirection = newAimDirection;
     }
 
-    private void OnShoot(Vector2 vector)
+    private void OnShoot()
     {
         CreateProjectile();
     }

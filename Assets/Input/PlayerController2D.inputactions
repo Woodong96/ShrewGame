@@ -25,9 +25,9 @@
                 },
                 {
                     "name": "Attack",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "87bd13b1-0da2-45a3-948c-97be8d9bd35b",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -102,8 +102,8 @@
                 },
                 {
                     "name": "",
-                    "id": "3b954328-7f04-44ae-b15d-97bb464e2090",
-                    "path": "<Mouse>/position",
+                    "id": "0ad912dd-b65a-47c2-9734-ca0add216bb0",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
