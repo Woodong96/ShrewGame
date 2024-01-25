@@ -119693,11 +119693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4402256532887659726, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.401454
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 4402256532887659726, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6007787
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4402256532887659726, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -119732,8 +119732,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7719191984074659865, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
-      propertyPath: m_PreviewTimeScale
+      propertyPath: m_Time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719191984074659865, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
+      propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719191984074659865, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
+      propertyPath: m_PreviewTimeScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7719191984074659865, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
@@ -120265,6 +120273,7 @@ MonoBehaviour:
   player_attack: 0
   player_defense: 0
   player_delay: 0
+  player_projectileSpeed: 0
   enemy: {fileID: 0}
   enemyAttackStats: {fileID: 11400000, guid: 1ffb12ba8daed6c4983ffd8eb35d854a, type: 2}
   enemy_hp: 0
