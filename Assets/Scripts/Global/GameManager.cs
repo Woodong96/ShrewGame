@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
 
 
-    private StatsSettingController statsController;
+    private ObjectStatsController statsController;
 
 
     private void Awake()
     {
         instance = this;
-        statsController = GetComponent<StatsSettingController>();
+        statsController = GetComponent<ObjectStatsController>();
     }
 
     private void Start()
