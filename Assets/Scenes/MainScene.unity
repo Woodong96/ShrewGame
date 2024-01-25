@@ -117143,6 +117143,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 656906994}
+  player_hp: 0
+  player_speed: 0
+  player_attack: 0
+  player_defense: 0
+  enemy_hp: 0
+  enemy_speed: 0
+  enemy_attack: 0
+  enemy_defense: 0
 --- !u!4 &1416810723
 Transform:
   m_ObjectHideFlags: 0
@@ -117167,7 +117175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1416810721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff80cf7004929c4787a8a4109d58c43, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf4866fa7c67f04580a642e1d543651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1501235008

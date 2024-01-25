@@ -13,4 +13,6 @@ public class StatsSetting : MonoBehaviour
     protected EntityType entityType;
     protected int full_hp;
     protected int speed;
+    protected int attack;
+    protected int defense;
 }

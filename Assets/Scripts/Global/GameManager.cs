@@ -9,34 +9,48 @@ public class GameManager : MonoBehaviour
 
     [Header("Character")]
     public GameObject player;
-    private float player_hp;
-    private int player_speed;
+    [SerializeField] private float player_hp;
+    [SerializeField] private int player_speed;
+    [SerializeField] private int player_attack;
+    [SerializeField] private int player_defense;
 
     [Header("Enemy")]
-    private int enemy_hp;
-    private int enemy_speed;
+    [SerializeField] private int enemy_hp;
+    [SerializeField] private int enemy_speed;
+    [SerializeField] private int enemy_attack;
+    [SerializeField] private int enemy_defense;
 
     [Header("UI")]
 
 
-    private StatsSettingController statsController;
+    private ObjectStatsController statsController;
 
 
     private void Awake()
     {
         instance = this;
-        statsController = GetComponent<StatsSettingController>();
+        statsController = GetComponent<ObjectStatsController>();
     }
 
     private void Start()
     {
         PlayerStats();
         EnemyStats();
+
     }
 
     private void Update()
     {
         player_hp -= Time.deltaTime;
+
+        
+        if (player_hp < 0)
+        {
+            Time.timeScale = 0;
+
+            //GameOver UI
+        }
+
     }
 
     private void PlayerStats()
@@ -44,6 +58,8 @@ public class GameManager : MonoBehaviour
         statsController.SetStats(EntityType.player);
         player_hp = statsController.GetFullHp();
         player_speed = statsController.GetSpeed();
+        player_attack = statsController.GetAttack();
+        player_defense = statsController.GetDefense();
     }
 
     private void EnemyStats()
@@ -51,5 +67,7 @@ public class GameManager : MonoBehaviour
         statsController.SetStats(EntityType.enemy);
         enemy_hp = statsController.GetFullHp();
         enemy_speed = statsController.GetSpeed();
+        enemy_attack = statsController.GetAttack();
+        enemy_defense = statsController.GetDefense();
     }
 }
