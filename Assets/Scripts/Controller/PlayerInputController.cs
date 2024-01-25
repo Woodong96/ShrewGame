@@ -28,4 +28,11 @@ public class PlayerInputController : CharacterController
             CallLookEvent(newAim);
         }
     }
+
+    public void OnAttack(InputValue value)
+    {
+        IsAttacking = value.isPressed;
+        
+        CallAttackEvent();
+    }
 }
