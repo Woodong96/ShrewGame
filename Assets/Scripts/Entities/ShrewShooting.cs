@@ -10,6 +10,8 @@ public class ShrewShooting : MonoBehaviour
     [SerializeField] private Transform projectileSpawnPosition;
     private Vector2 _aimDirection = Vector2.right;
 
+    public GameObject testPrefab;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -33,7 +35,7 @@ public class ShrewShooting : MonoBehaviour
 
     private void CreateProjectile()
     {
-        Debug.Log("Fire");
+        Instantiate(testPrefab, projectileSpawnPosition.position, Quaternion.identity);
     }
 
     // Update is called once per frame
