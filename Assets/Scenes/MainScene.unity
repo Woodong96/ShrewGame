@@ -120185,14 +120185,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 656906994}
+  playerAttackStats: {fileID: 11400000, guid: ae4fb9de5da79cc4894f64606b0ca70a, type: 2}
   player_hp: 0
   player_speed: 0
   player_attack: 0
   player_defense: 0
+  enemy: {fileID: 0}
+  enemyAttackStats: {fileID: 11400000, guid: 1ffb12ba8daed6c4983ffd8eb35d854a, type: 2}
   enemy_hp: 0
   enemy_speed: 0
   enemy_attack: 0
   enemy_defense: 0
+  feed: {fileID: 0}
+  feedStats: {fileID: 11400000, guid: da5957c4f407c3e449e347481aed8116, type: 2}
 --- !u!4 &1416810723
 Transform:
   m_ObjectHideFlags: 0
