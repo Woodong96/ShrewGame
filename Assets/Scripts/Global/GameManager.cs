@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public AttackStatsSetting playerAttackStats;
     public float player_hp = 60;
-    public float player_maxhp = 60;
     public int player_speed;
     public int player_attack;
     public int player_defense;
@@ -145,21 +144,35 @@ public class GameManager : MonoBehaviour
     public void CollisionPlayerToEnemy()
     {
         enemy_hp -= (int)(player_attack - (enemy_defense * 0.1f));
-        if(enemy_hp < 0)
+        if (enemy_hp < 0)
         {
             Destroy(enemy);
             kill_count++;
         }
+        
+       
     }
 
     public void CollisionEnemyToPlayer() 
     {
         player_hp -= enemy_attack - (player_defense * 0.5f);
+
+        HpBar.value -= enemy_attack - (player_defense * 0.5f);
+        if (HpBar.value <= 0)       //에너지바가 0 이하로 떨어지지않게
+        {
+            HpBar.value = 0;
+        }
+
     }
 
     public void CollisionPlayerToFeed()
     {
         player_hp += feed_plus_hp;
+        HpBar.value += feed_plus_hp;
+        if (HpBar.value > 60)      // 에너지바가 풀에너지 넘지않게
+        {
+            HpBar.value = 60;
+        }
         Destroy(feed);
     }
 }
