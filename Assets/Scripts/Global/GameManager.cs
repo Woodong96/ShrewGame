@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
 
 
     [Header("UI")]
+    public Image playerHP;
+
+
 
     //-----------------------------------------------------------------------------------------------
     //GameManager 에서 사용될 Component
