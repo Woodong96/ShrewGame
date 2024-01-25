@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
 
-    
 
     private StatsSettingController statsController;
 
@@ -37,11 +36,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerStats();
         EnemyStats();
+
     }
 
     private void Update()
     {
         player_hp -= Time.deltaTime;
+
         
         if (player_hp < 0)
         {
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
 
             //GameOver UI
         }
+
     }
 
     private void PlayerStats()
