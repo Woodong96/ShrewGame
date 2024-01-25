@@ -10,7 +10,7 @@ public enum EntityType
 
 public class StatsSetting : MonoBehaviour
 {
-    public EntityType entityType;
-    public int full_hp;
-    public int speed;
+    protected EntityType entityType;
+    protected int full_hp;
+    protected int speed;
 }

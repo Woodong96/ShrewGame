@@ -8,23 +8,28 @@ public class GameManager : MonoBehaviour
 
     [Header("Character")]
     public GameObject player;
+    private int player_hp;
+    private int player_speed;
 
+
+    private StatsSettingController statsController;
 
 
     private void Awake()
     {
         instance = this;
+        statsController = GetComponent<StatsSettingController>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        player_hp -= (int)Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayerStats()
     {
-        
+        statsController.SetStats(EntityType.player);
+        player_hp = statsController.GetFullHp();
+        player_speed = statsController.GetSpeed();
     }
 }

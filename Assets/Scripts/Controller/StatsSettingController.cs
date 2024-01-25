@@ -2,16 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatsSettingController : MonoBehaviour
+public class StatsSettingController : StatsSetting
 {
-    void Start()
+    public void SetStats(EntityType entityType)
     {
-        
+        switch (entityType)
+        {
+            case EntityType.player:
+                full_hp = 100;
+                speed = 5;
+                break;
+            case EntityType.enemy:
+                full_hp = 100;
+                speed = 5;
+                break;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public int GetFullHp()
     {
-        
+        return full_hp;
+    }
+
+    public int GetSpeed()
+    {
+        return speed;
     }
 }
