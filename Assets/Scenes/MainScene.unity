@@ -120345,7 +120345,7 @@ MonoBehaviour:
   feed: {fileID: 0}
   feedStats: {fileID: 11400000, guid: da5957c4f407c3e449e347481aed8116, type: 2}
   feed_plus_hp: 0
-  HpBar: {fileID: 0}
+  HpBar: {fileID: 1759422820}
   gameOverBoard: {fileID: 0}
   killEnemy: {fileID: 0}
   playTime: {fileID: 0}
@@ -120423,7 +120423,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547066877}
-  - component: {fileID: 1740670823}
   - component: {fileID: 1547066876}
   - component: {fileID: 1547066875}
   m_Layer: 0
@@ -120621,18 +120620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testobj: {fileID: 95697322656837892, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
---- !u!114 &1740670823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547066873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1759422818
 GameObject:
   m_ObjectHideFlags: 0
@@ -120711,7 +120698,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1581174530}
   m_HandleRect: {fileID: 0}
