@@ -7,10 +7,9 @@ public class MonsterMove : MonoBehaviour
    
     public float CreateTime = 0.0f; // 생성되고 난 후 몇초가 지났는지
     public float speed = 0.05f; // 점으로 이동하는 속도
-    public float deleteTIme = 3.0f; // 작은 원들을 삭제할 시간
     public float moveTIme = 0.1f; // 작은 원들이 움직이기 시작하는 시간
     public bool canmove = false; // 움직이는 불값
-    public bool candelete = false; // 삭제되는 불값
+  
 
     public GameObject target; // 이동할 위치 가져올 오브젝트
 
@@ -24,13 +23,11 @@ public class MonsterMove : MonoBehaviour
         if (CreateTime >= moveTIme) // 생성된 시간이 움직일 수 있는 시간보다 많아지면 canmove true
             canmove = true;
 
-        if (CreateTime >= deleteTIme) // 생성된 시간이 삭제시간보다 많아지면 candelete true
-            candelete = true;
+        
 
         if (canmove) // canmove = true
             transform.position = Vector2.MoveTowards(gameObject.transform.position, target.transform.position,speed);
         //이 오브젝트의 위치에 Vector2값을 계속 주어 target.transform.position으로 이동시킴 속도는 speed의 값의 크기로 이동
-        if (candelete) // candelete = true
-            Destroy(gameObject); // 이 게임오브젝트 파괴
+        
     }
 }
