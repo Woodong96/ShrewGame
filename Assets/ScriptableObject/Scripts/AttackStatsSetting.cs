@@ -9,4 +9,6 @@ public class AttackStatsSetting : DefaultStatsSetting
     [Header("Attack Stats Info")]
     public int attack;
     public int defense;
+    public float delay;
+    public int projectileSpeed;
 }
