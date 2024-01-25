@@ -116611,11 +116611,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656906995}
+  - component: {fileID: 656907000}
   - component: {fileID: 656906998}
   - component: {fileID: 656906997}
   - component: {fileID: 656906996}
   - component: {fileID: 656906999}
-  - component: {fileID: 656907000}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -116977,6 +116977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416810723}
   - component: {fileID: 1416810722}
+  - component: {fileID: 1416810724}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -116997,6 +116998,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 656906994}
+  playerAttackStats: {fileID: 11400000, guid: ae4fb9de5da79cc4894f64606b0ca70a, type: 2}
+  player_hp: 0
+  player_speed: 0
+  player_attack: 0
+  player_defense: 0
+  enemy: {fileID: 0}
+  enemyAttackStats: {fileID: 11400000, guid: 1ffb12ba8daed6c4983ffd8eb35d854a, type: 2}
+  enemy_hp: 0
+  enemy_speed: 0
+  enemy_attack: 0
+  enemy_defense: 0
+  feed: {fileID: 0}
+  feedStats: {fileID: 11400000, guid: da5957c4f407c3e449e347481aed8116, type: 2}
 --- !u!4 &1416810723
 Transform:
   m_ObjectHideFlags: 0
@@ -117012,6 +117026,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1416810724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416810721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf4866fa7c67f04580a642e1d543651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501235008
 GameObject:
   m_ObjectHideFlags: 0
