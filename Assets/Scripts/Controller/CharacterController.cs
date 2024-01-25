@@ -28,6 +28,7 @@ public class CharacterController : MonoBehaviour
         else if (IsAttacking && _timeSinceLastAttack > 0.2f)
         {
             _timeSinceLastAttack = 0;
+            CallAttackEvent();
         }
     }
 

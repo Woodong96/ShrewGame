@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-        direction = direction * 5;
+        direction = direction * GameManager.instance.player_speed;
 
         _rigidbody.velocity = direction;
     }

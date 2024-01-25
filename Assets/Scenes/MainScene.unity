@@ -116825,7 +116825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9dfd6a779e73342b978a10b984b1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpawnPosition: {fileID: 0}
+  projectileSpawnPosition: {fileID: 285092586}
 --- !u!1 &679525358
 GameObject:
   m_ObjectHideFlags: 0
@@ -117147,6 +117147,7 @@ MonoBehaviour:
   player_speed: 0
   player_attack: 0
   player_defense: 0
+  enemy: {fileID: 0}
   enemy_hp: 0
   enemy_speed: 0
   enemy_attack: 0
