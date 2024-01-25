@@ -18,7 +18,11 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
 
+<<<<<<< Updated upstream
 
+=======
+  
+>>>>>>> Stashed changes
     private StatsSettingController statsController;
 
 
@@ -32,11 +36,23 @@ public class GameManager : MonoBehaviour
     {
         PlayerStats();
         EnemyStats();
+
     }
 
     private void Update()
     {
         player_hp -= Time.deltaTime;
+<<<<<<< Updated upstream
+=======
+        
+        if (player_hp < 0)
+        {
+            Time.timeScale = 0;
+
+            //GameOver UI
+        }
+
+>>>>>>> Stashed changes
     }
 
     private void PlayerStats()
