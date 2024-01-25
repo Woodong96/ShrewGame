@@ -17,3 +17,5 @@ MonoBehaviour:
   speed: 5
   attack: 10
   defense: 5
+  delay: 0.3
+  projectileSpeed: 10

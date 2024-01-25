@@ -32,7 +32,5 @@ public class PlayerInputController : CharacterController
     public void OnAttack(InputValue value)
     {
         IsAttacking = value.isPressed;
-        
-        CallAttackEvent();
     }
 }

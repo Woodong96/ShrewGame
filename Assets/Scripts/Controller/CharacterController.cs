@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action OnAttackEvent;
+    public event Action<AttackStatsSetting> OnAttackEvent;
 
     private float _timeSinceLastAttack = float.MaxValue;
     protected bool IsAttacking { get; set; }
@@ -20,15 +21,15 @@ public class CharacterController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (_timeSinceLastAttack <= 0.2f)
+        if (_timeSinceLastAttack <= GameManager.instance.playerAttackStats.delay)
         {
             _timeSinceLastAttack += Time.deltaTime;
         }
 
-        else if (IsAttacking && _timeSinceLastAttack > 0.2f)
+        else if (IsAttacking && _timeSinceLastAttack > GameManager.instance.playerAttackStats.delay)
         {
             _timeSinceLastAttack = 0;
-            CallAttackEvent();
+            CallAttackEvent(GameManager.instance.playerAttackStats);
         }
     }
 
@@ -42,8 +43,8 @@ public class CharacterController : MonoBehaviour
         OnLookEvent?.Invoke(direction);
     }
 
-    public void CallAttackEvent()
+    public void CallAttackEvent(AttackStatsSetting attackData)
     {
-        OnAttackEvent?.Invoke();
+        OnAttackEvent?.Invoke(attackData);
     }
 }

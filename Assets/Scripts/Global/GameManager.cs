@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public int player_speed;
     public int player_attack;
     public int player_defense;
+    public float player_delay;
+    public int player_projectileSpeed;
 
     [Header("Enemy")]
     public GameObject enemy;

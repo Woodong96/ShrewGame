@@ -6,6 +6,7 @@ using UnityEngine;
 public class ShrewShooting : MonoBehaviour
 {
     private CharacterController _controller;
+    private ProjectileManager _projectileManager;
 
     [SerializeField] private Transform projectileSpawnPosition;
     private Vector2 _aimDirection = Vector2.right;
@@ -14,11 +15,13 @@ public class ShrewShooting : MonoBehaviour
 
     private void Awake()
     {
+        
         _controller = GetComponent<CharacterController>();
     }
     // Start is called before the first frame update
     void Start()
     {
+        _projectileManager = ProjectileManager.instance;
         _controller.OnAttackEvent += OnShoot;
         _controller.OnLookEvent += OnAim;
     }
@@ -28,16 +31,28 @@ public class ShrewShooting : MonoBehaviour
         _aimDirection = newAimDirection;
     }
 
-    private void OnShoot()
+    private void OnShoot(AttackStatsSetting attackData)
     {
-        CreateProjectile();
+           
+        for (int i = 0; i < 1; i++)
+        {
+            CreateProjectile(attackData);
+        }
+        
     }
 
-    private void CreateProjectile()
+    private void CreateProjectile(AttackStatsSetting attackData)
     {
-        Instantiate(testPrefab, projectileSpawnPosition.position, Quaternion.identity);
+        _projectileManager.ShootBullet(
+            projectileSpawnPosition.position,
+            RotateVector2(_aimDirection),
+            attackData);
     }
 
+    private static Vector2 RotateVector2(Vector2 v)
+    {
+        return Quaternion.Euler(0, 0, 0) * v;
+    }
     // Update is called once per frame
     void Update()
     {
