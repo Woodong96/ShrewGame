@@ -116826,7 +116826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 285092586}
-  testPrefab: {fileID: 95697322656837892, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
 --- !u!1 &679525358
 GameObject:
   m_ObjectHideFlags: 0
