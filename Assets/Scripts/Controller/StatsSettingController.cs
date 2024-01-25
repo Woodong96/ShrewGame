@@ -13,8 +13,8 @@ public class StatsSettingController : StatsSetting
                 speed = 5;
                 break;
             case EntityType.enemy:
-                full_hp = 100;
-                speed = 5;
+                full_hp = 30;
+                speed = 1;
                 break;
         }
     }

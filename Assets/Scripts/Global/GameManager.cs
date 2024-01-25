@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,8 +9,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Character")]
     public GameObject player;
-    private int player_hp;
+    private float player_hp;
     private int player_speed;
+
+    [Header("Enemy")]
+    private int enemy_hp;
+    private int enemy_speed;
+
+    [Header("UI")]
 
 
     private StatsSettingController statsController;
@@ -23,7 +30,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player_hp -= (int)Time.deltaTime;
+        PlayerStats();
+        EnemyStats();
+    }
+
+    private void Update()
+    {
+        player_hp -= Time.deltaTime;
     }
 
     private void PlayerStats()
@@ -31,5 +44,12 @@ public class GameManager : MonoBehaviour
         statsController.SetStats(EntityType.player);
         player_hp = statsController.GetFullHp();
         player_speed = statsController.GetSpeed();
+    }
+
+    private void EnemyStats()
+    {
+        statsController.SetStats(EntityType.enemy);
+        enemy_hp = statsController.GetFullHp();
+        enemy_speed = statsController.GetSpeed();
     }
 }
