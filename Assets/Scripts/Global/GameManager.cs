@@ -16,40 +16,40 @@ public class GameManager : MonoBehaviour
     private int enemy_hp;
     private int enemy_speed;
 
-    [Header("UI")]
+    //[Header("UI")]
 
 
-    private StatsSettingController statsController;
+    //private StatsSettingController statsController;
 
 
     private void Awake()
     {
         instance = this;
-        statsController = GetComponent<StatsSettingController>();
+        //statsController = GetComponent<StatsSettingController>();
     }
 
-    private void Start()
-    {
-        PlayerStats();
-        EnemyStats();
-    }
+    //private void Start()
+    //{
+    //    PlayerStats();
+    //    EnemyStats();
+    //}
 
-    private void Update()
-    {
-        player_hp -= Time.deltaTime;
-    }
+    //private void Update()
+    //{
+    //    player_hp -= Time.deltaTime;
+    //}
 
-    private void PlayerStats()
-    {
-        statsController.SetStats(EntityType.player);
-        player_hp = statsController.GetFullHp();
-        player_speed = statsController.GetSpeed();
-    }
+    //private void PlayerStats()
+    //{
+    //    statsController.SetStats(EntityType.player);
+    //    player_hp = statsController.GetFullHp();
+    //    player_speed = statsController.GetSpeed();
+    //}
 
-    private void EnemyStats()
-    {
-        statsController.SetStats(EntityType.enemy);
-        enemy_hp = statsController.GetFullHp();
-        enemy_speed = statsController.GetSpeed();
-    }
+    //private void EnemyStats()
+    //{
+    //    statsController.SetStats(EntityType.enemy);
+    //    enemy_hp = statsController.GetFullHp();
+    //    enemy_speed = statsController.GetSpeed();
+    //}
 }

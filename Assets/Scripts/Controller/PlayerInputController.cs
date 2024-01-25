@@ -28,4 +28,16 @@ public class PlayerInputController : CharacterController
             CallLookEvent(newAim);
         }
     }
+
+    public void OnFire(InputValue value)
+    {
+        Vector2 attackAim = value.Get<Vector2>();
+        Vector2 worldPos = _camera.ScreenToWorldPoint(attackAim);
+        attackAim = (worldPos - (Vector2)transform.position).normalized;
+
+        if (attackAim.magnitude > 0f)
+        {
+            CallAttackEvent(attackAim);
+        }
+    }
 }
