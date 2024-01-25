@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     [Header("Character")]
     public GameObject player;
     public AttackStatsSetting playerAttackStats;
-    public float player_hp;
+    public float player_hp = 60;
+    public float player_maxhp = 60;
     public int player_speed;
     public int player_attack;
     public int player_defense;
@@ -37,7 +38,10 @@ public class GameManager : MonoBehaviour
     private int feed_count;
 
     [Header("UI")]
-    public Image playerHP;
+    public Slider HpBar;
+    
+
+
 
 
     //-----------------------------------------------------------------------------------------------
@@ -68,16 +72,20 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartGame();
+       
     }
 
     private void Update()
     {
+
+        HpBar.value -= Time.deltaTime;
         player_hp -= Time.deltaTime;
         play_time += Time.deltaTime;
         if (player_hp < 0)
         {
             EndGame();
         }
+
     }
 
     //-----------------------------------------------------------------------------------------------
