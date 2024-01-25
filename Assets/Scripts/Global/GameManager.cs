@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     //사용되는 변수들. public이 아니더라도 Header와 연관되어 있다면 Header 안에 작성.
     [Header("Character")]
     public GameObject player;
-    public AttackStatsSetting playerAttackStats;
     public float player_hp;
     public int player_speed;
     public int player_attack;
@@ -24,22 +23,16 @@ public class GameManager : MonoBehaviour
 
     [Header("Enemy")]
     public GameObject enemy;
-    public AttackStatsSetting enemyAttackStats;
     public int enemy_hp;
     public int enemy_speed;
     public int enemy_attack;
     public int enemy_defense;
 
-    [Header("Feed")]
-    public GameObject feed;
-    public DefaultStatsSetting feedStats;
-
-
     [Header("UI")]
 
     //-----------------------------------------------------------------------------------------------
     //GameManager 에서 사용될 Component
-    //private ObjectStatsController statsController;
+    private ObjectStatsController statsController;
 
     //-----------------------------------------------------------------------------------------------
     //GameManager 싱글턴 설정 및 Component 받아오기
@@ -49,7 +42,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //statsController = GetComponent<ObjectStatsController>();
+        statsController = GetComponent<ObjectStatsController>();
     }
 
     private void Start()
@@ -75,18 +68,20 @@ public class GameManager : MonoBehaviour
     //GameObject stats 설정
     private void PlayerStats()
     {
-        player_hp = playerAttackStats.full_hp;
-        player_speed = playerAttackStats.speed;
-        player_attack = playerAttackStats.attack;
-        player_defense = playerAttackStats.defense;
+        statsController.SetStats(EntityType.player);
+        player_hp = statsController.GetFullHp();
+        player_speed = statsController.GetSpeed();
+        player_attack = statsController.GetAttack();
+        player_defense = statsController.GetDefense();
     }
 
     private void EnemyStats()
     {
-        enemy_hp = enemyAttackStats.full_hp;
-        enemy_speed = enemyAttackStats.speed;
-        enemy_attack = enemyAttackStats.attack;
-        enemy_defense = enemyAttackStats.defense;
+        statsController.SetStats(EntityType.enemy);
+        enemy_hp = statsController.GetFullHp();
+        enemy_speed = statsController.GetSpeed();
+        enemy_attack = statsController.GetAttack();
+        enemy_defense = statsController.GetDefense();
     }
 
     //-----------------------------------------------------------------------------------------------
