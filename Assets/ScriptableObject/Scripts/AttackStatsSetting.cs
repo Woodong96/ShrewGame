@@ -11,4 +11,5 @@ public class AttackStatsSetting : DefaultStatsSetting
     public int defense;
     public float delay;
     public int projectileSpeed;
+    public string bulletNameTag;
 }

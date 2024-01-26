@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
     public static ProjectileManager instance;
+    private ObjectPool objectPool;
 
     [SerializeField] private GameObject testobj;
     private void Awake()
@@ -14,12 +15,12 @@ public class ProjectileManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectPool = GetComponent<ObjectPool>();
     }
 
     public void ShootBullet(Vector2 startPosition, Vector2 direction, AttackStatsSetting attackData)
     {
-        GameObject obj = Instantiate(testobj);
+        GameObject obj = objectPool.SpanwFromPool(attackData.bulletNameTag);
 
         obj.transform.position = startPosition;
         RangedAttackController attackController = obj.GetComponent<RangedAttackController>();

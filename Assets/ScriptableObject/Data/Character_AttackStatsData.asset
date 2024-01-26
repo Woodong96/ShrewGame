@@ -19,3 +19,4 @@ MonoBehaviour:
   defense: 5
   delay: 0.3
   projectileSpeed: 10
+  bulletNameTag: ShrewWeapon

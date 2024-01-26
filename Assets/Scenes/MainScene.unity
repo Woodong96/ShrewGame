@@ -120687,6 +120687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733646394}
   - component: {fileID: 1733646395}
+  - component: {fileID: 1733646396}
   m_Layer: 0
   m_Name: ProjectileManager
   m_TagString: Untagged
@@ -120722,6 +120723,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testobj: {fileID: 95697322656837892, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
+--- !u!114 &1733646396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733646393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9019ff73d4067df4c9a46e097d5c87d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: ShrewWeapon
+    prefab: {fileID: 95697322656837892, guid: fa501276951564b4b85bd1bb4fe582a8, type: 3}
+    size: 20
 --- !u!1 &1759422818
 GameObject:
   m_ObjectHideFlags: 0
