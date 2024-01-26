@@ -24,7 +24,9 @@ public class SpawnManager : MonoBehaviour
         {
             if (PrefabToSpawn != null)
             {
-                return Instantiate(PrefabToSpawn, transform.position, Quaternion.identity);
+                GameObject newEnemy = Instantiate(PrefabToSpawn, transform.position, Quaternion.identity);
+                newEnemy.transform.parent = GameObject.Find("Enemy").transform; //Enemy 하위에 생성되게 하기
+                return newEnemy;
             }
         }
         return null;
