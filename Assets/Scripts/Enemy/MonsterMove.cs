@@ -9,8 +9,7 @@ public class MonsterMove : MonoBehaviour
     public float speed = 0.05f; // 점으로 이동하는 속도
     public float moveTIme = 0.1f; // 작은 원들이 움직이기 시작하는 시간
     public bool canmove = false; // 움직이는 불값
-  
-
+    
     public GameObject target; // 이동할 위치 가져올 오브젝트
 
     private void Awake() // Start여도 상관은 없음
@@ -28,6 +27,8 @@ public class MonsterMove : MonoBehaviour
         if (canmove) // canmove = true
             transform.position = Vector2.MoveTowards(gameObject.transform.position, target.transform.position,speed);
         //이 오브젝트의 위치에 Vector2값을 계속 주어 target.transform.position으로 이동시킴 속도는 speed의 값의 크기로 이동
-        
+
+        float angle = Mathf.Atan2(target.transform.position.y, target.transform.position.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0,angle);
     }
 }
