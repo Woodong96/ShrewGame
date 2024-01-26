@@ -15,8 +15,11 @@ MonoBehaviour:
   entityType: 0
   full_hp: 100
   speed: 5
+  bulletNameTag: ShrewWeapon
   attack: 10
   defense: 5
   delay: 0.3
   projectileSpeed: 10
-  bulletNameTag: ShrewWeapon
+  target:
+    serializedVersion: 2
+    m_Bits: 128

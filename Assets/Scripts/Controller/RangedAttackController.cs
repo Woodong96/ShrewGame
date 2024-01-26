@@ -44,6 +44,10 @@ public class RangedAttackController : MonoBehaviour
         {
             DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f, fxOnDestroy);
         }
+        else if (_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
+        {
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+        }
     }
 
     public void InitializeAttack(Vector2 direction, AttackStatsSetting attackData, ProjectileManager projectileManager)

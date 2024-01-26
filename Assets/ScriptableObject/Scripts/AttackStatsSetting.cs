@@ -7,9 +7,10 @@ using UnityEngine;
 public class AttackStatsSetting : DefaultStatsSetting
 {
     [Header("Attack Stats Info")]
+    public string bulletNameTag;
     public int attack;
     public int defense;
     public float delay;
     public int projectileSpeed;
-    public string bulletNameTag;
+    public LayerMask target;
 }

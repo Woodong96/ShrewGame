@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3244688299529896728}
   - component: {fileID: 4724435954927197883}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4233782336946631303}
   - component: {fileID: -471005162075622174}
   - component: {fileID: -1891198609927895801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
