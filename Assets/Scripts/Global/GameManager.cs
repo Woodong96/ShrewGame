@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+
+
 public class GameManager : MonoBehaviour
 {
     /*
@@ -40,13 +44,6 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public Slider HpBar;
-    
-
-
-
-
-    //-----------------------------------------------------------------------------------------------
-    //GameOver 시 나타나는 UI
     public GameObject gameOverBoard;
     public Text killEnemy;
     private int kill_count;
@@ -55,10 +52,9 @@ public class GameManager : MonoBehaviour
     public Text totalScore;
     private int total_score;
 
-
     //-----------------------------------------------------------------------------------------------
     //GameManager 에서 사용될 Component
-    
+
 
     //-----------------------------------------------------------------------------------------------
     //GameManager 싱글턴 설정 및 Component 받아오기
@@ -151,8 +147,6 @@ public class GameManager : MonoBehaviour
             Destroy(enemy);
             kill_count++;
         }
-        
-       
     }
 
     public void CollisionEnemyToPlayer() 

@@ -26,6 +26,7 @@ public class SpawnManager : MonoBehaviour
             {
                 GameObject newEnemy = Instantiate(PrefabToSpawn, transform.position, Quaternion.identity);
                 newEnemy.transform.parent = GameObject.Find("Enemy").transform; //Enemy 하위에 생성되게 하기
+                newEnemy.AddComponent<CollisionController>();
                 return newEnemy;
             }
         }

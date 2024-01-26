@@ -207,4 +207,5 @@ MonoBehaviour:
   speed: 0.015
   moveTIme: 0.1
   canmove: 0
+  rotateSpeed: 0
   target: {fileID: 0}

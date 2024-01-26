@@ -117209,7 +117209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428513953}
   m_Layer: 7
-  m_Name: Enermy
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120806,9 +120806,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 60
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 60
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
